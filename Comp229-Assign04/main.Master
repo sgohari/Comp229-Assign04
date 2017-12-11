@@ -14,6 +14,8 @@
     <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="Content/font-awesome.min.css" rel="stylesheet" />
     <link href="Content/StyleSheetForMain.css" rel="stylesheet" />
+    <link href="Content/HomeStyleSheet.css" rel="stylesheet" />
+    
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -32,7 +34,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="Index.aspx" runat="server"><i class="fa fa-home fa-lg" aria-hidden="true"></i> Home</a>
+      <a class="navbar-brand" href="home.aspx" runat="server"><i class="fa fa-home fa-lg" aria-hidden="true"></i> Home</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -40,13 +42,13 @@
 
       
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="survey.aspx"> <i class="fa fa-user-secret fa-lg" aria-hidden="true"></i> Survey</a></li>
-       
+        <li><a class="navbar-brand" href="model.aspx" runat="server">Model </a></li>
+       <li><a class="navbar-brand" href="update.aspx" runat="server">Update </a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        <asp:ContentPlaceHolder ID="mainContain" runat="server">
 
         
         </asp:ContentPlaceHolder>
@@ -61,7 +63,10 @@
             <p></p>
         </div>
 
-    <footer style="height: 22px">&nbsp; ©Copy right Syed Nasir COMP229, Assignment02 Centennial College</footer>
-    </div>
+    </form> 
+         <footer style="height: 28px">&nbsp; ©Copy right Syed Nasir COMP229 | Assignment04 | Centennial College
+              <%: DateTime.Now.Year %>
+
+         </footer>    </div>
 </body>
 </html>

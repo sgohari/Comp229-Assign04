@@ -11,7 +11,25 @@ namespace Comp229_Assign04
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            TitlePage();
+        }
+        private void TitlePage()
+        {
+            switch (Page.Title)
+            {
+                case "HomePage":
+                    
+                    Page.Title = string.Format("Home Page");
+                    break;
+                case "ModelPage":
 
+                    Page.Title = string.Format("Model Page");
+                    break;
+                case "UpdatePage":
+
+                    Page.Title = string.Format("Update Page");
+                    break;
+            }
         }
     }
 }
