@@ -2,8 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="PageContains" ContentPlaceHolderID="mainContain" runat="server">
-    <div id="modelPage">
-        <asp:Image runat="server" ID="imageModel" Width="400px" />
+    <div>
         <table>
             <tr><td>Name:</td><td>
                     <asp:Label runat="server" ID="lbName"></asp:Label>
@@ -17,9 +16,12 @@
             <tr><td>Base:</td> <td>
                     <asp:Label runat="server" ID="lb_Base"></asp:Label>
                 </td> </tr>
-            <tr><td>Size:</td><td>
-                    <asp:Label runat="server" ID="lb_Size"></asp:Label>
-                </td></tr>
+            <tr>
+            <td>Size:</td>
+            <td>
+                <asp:Label runat="server" ID="lb_Size"></asp:Label>
+            </td>
+        </tr>
             <tr><td>Deployment Zone:</td><td>
                     <asp:Label runat="server" ID="lbDeployment"></asp:Label>
                 </td></tr>

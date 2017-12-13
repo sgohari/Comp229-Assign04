@@ -6,25 +6,20 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Newtonsoft.Json;
 
+
 namespace Comp229_Assign04
 {
     public partial class model : System.Web.UI.Page
     {
         private models.BaseStats baseStatus;
-        protected string vName;
-        protected string Vfaction;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (vName != null && Vfaction != null)
-            {
-                baseStatus.actions.
-                selectedModel();
-            }
 
         }
         private void selectedModel()
         {
-            imageModel.ImageUrl = baseStatus.imageUrl;
+            //imageModel.ImageUrl = baseStatus.imageUrl;
             lbName.Text = baseStatus.name;
             lbFaction.Text = baseStatus.faction;
             lbRank.Text = baseStatus.rank.ToString();
