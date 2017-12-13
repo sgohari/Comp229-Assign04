@@ -13,76 +13,76 @@ namespace Comp229_Assign04 {
     public partial class model {
         
         /// <summary>
-        /// modelimg control.
+        /// imageModel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image modelimg;
+        protected global::System.Web.UI.WebControls.Image imageModel;
         
         /// <summary>
-        /// name control.
+        /// lbName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label name;
+        protected global::System.Web.UI.WebControls.Label lbName;
         
         /// <summary>
-        /// faction control.
+        /// lbFaction control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label faction;
+        protected global::System.Web.UI.WebControls.Label lbFaction;
         
         /// <summary>
-        /// rank control.
+        /// lbRank control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label rank;
+        protected global::System.Web.UI.WebControls.Label lbRank;
         
         /// <summary>
-        /// _base control.
+        /// lb_Base control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label _base;
+        protected global::System.Web.UI.WebControls.Label lb_Base;
         
         /// <summary>
-        /// size control.
+        /// lb_Size control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label size;
+        protected global::System.Web.UI.WebControls.Label lb_Size;
         
         /// <summary>
-        /// deployment control.
+        /// lbDeployment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label deployment;
+        protected global::System.Web.UI.WebControls.Label lbDeployment;
         
         /// <summary>
-        /// traitsrep control.
+        /// lb_Traitsrep control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater traitsrep;
+        protected global::System.Web.UI.WebControls.Repeater lb_Traitsrep;
         
         /// <summary>
         /// typerep control.
@@ -128,14 +128,5 @@ namespace Comp229_Assign04 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label wounds;
-        
-        /// <summary>
-        /// Update control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Update;
     }
 }

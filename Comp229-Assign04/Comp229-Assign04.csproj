@@ -128,6 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\HomeStyleSheet.css" />
+    <Content Include="Content\ModelStyleSheet.css" />
     <Content Include="Content\SurveyStyleSheet.css" />
     <Content Include="Content\thanksPageStyleSheet.css" />
     <Content Include="home.aspx" />

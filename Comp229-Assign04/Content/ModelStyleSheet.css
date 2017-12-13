@@ -1,0 +1,14 @@
+﻿#modelPage {
+    width:1020px;
+}
+    #modelPage table {
+        position:center;
+    }
+        #modelPage table td {
+            width:300px;
+            height:45px;
+            margin-top:10px;
+            margin-bottom:10px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size:large;
+        }

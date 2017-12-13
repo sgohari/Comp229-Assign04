@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Newtonsoft.Json;
 
 namespace Comp229_Assign04
 {
@@ -14,19 +15,30 @@ namespace Comp229_Assign04
         protected string vFaction;
         protected void Page_Load(object sender, EventArgs e)
         {
+            vName = Request.QueryString["name"];
+            vFaction = Request.QueryString["faction"];
 
+            if (name != null && faction != null)
+            {
+                basestats = Global.models.FirstOrDefault(tModel => tModel.name == vName && tModel.faction == vFaction);
+                selectedModel();
+            }
+            else
+            {
+                Response.Redirect("home.aspx");
+            }
         }
-        private void selectedmodel()
+        private void selectedModel()
         {
-            modelimg.ImageUrl = basestats.imageUrl;
-            name.Text = basestats.name;
-            faction.Text = basestats.faction;
-            rank.Text = basestats.rank.ToString();
-            _base.Text = basestats._base.ToString();
-            size.Text = basestats.size.ToString();
-            deployment.Text = basestats.deploymentZone;
-            traitsrep.DataSource = basestats.traits;
-            traitsrep.DataBind();
+            imageModel.ImageUrl = basestats.imageUrl;
+            lbName.Text = basestats.name;
+            lbFaction.Text = basestats.faction;
+            lbRank.Text = basestats.rank.ToString();
+            lb_Base.Text = basestats._base.ToString();
+            lb_Size.Text = basestats.size.ToString();
+            lbDeployment.Text = basestats.deploymentZone;
+            lb_Traitsrep.DataSource = basestats.traits;
+            lb_Traitsrep.DataBind();
             typerep.DataSource = basestats.defenseChart;
             typerep.DataBind();
             mobility.Text = basestats.mobility.ToString();
@@ -38,7 +50,6 @@ namespace Comp229_Assign04
         }
         protected void Update_Click(object sender, EventArgs e)
         {
-            
 
         }
 

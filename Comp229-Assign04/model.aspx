@@ -1,32 +1,30 @@
 ﻿<%@ Page Title="ModelPage" Language="C#" MasterPageFile="~/main.Master" AutoEventWireup="true" CodeBehind="model.aspx.cs" Inherits="Comp229_Assign04.model" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="mainContain" runat="server">
-        <div class="col-xs-12 col-md-4">
-        <asp:Image runat="server" ID="modelimg" Width="400px" />
-
-    
+<asp:Content ID="PageContains" ContentPlaceHolderID="mainContain" runat="server">
+    <div id="modelPage">
+        <asp:Image runat="server" ID="imageModel" Width="400px" />
         <table>
             <tr><td>Name:</td><td>
-                    <asp:Label runat="server" ID="name"></asp:Label>
+                    <asp:Label runat="server" ID="lbName"></asp:Label>
                 </td></tr>
             <tr><td>Faction:</td><td>
-                    <asp:Label runat="server" ID="faction"></asp:Label>
+                    <asp:Label runat="server" ID="lbFaction"></asp:Label>
                 </td> </tr>
             <tr><td>Rank:</td><td>
-                    <asp:Label runat="server" ID="rank"></asp:Label>
+                    <asp:Label runat="server" ID="lbRank"></asp:Label>
                 </td> </tr>
             <tr><td>Base:</td> <td>
-                    <asp:Label runat="server" ID="_base"></asp:Label>
+                    <asp:Label runat="server" ID="lb_Base"></asp:Label>
                 </td> </tr>
             <tr><td>Size:</td><td>
-                    <asp:Label runat="server" ID="size"></asp:Label>
+                    <asp:Label runat="server" ID="lb_Size"></asp:Label>
                 </td></tr>
             <tr><td>Deployment Zone:</td><td>
-                    <asp:Label runat="server" ID="deployment"></asp:Label>
+                    <asp:Label runat="server" ID="lbDeployment"></asp:Label>
                 </td></tr>
             <tr><td>Traits:</td><td>
-                    <asp:Repeater runat="server" ID="traitsrep">
+                    <asp:Repeater runat="server" ID="lb_Traitsrep">
                         <ItemTemplate>
                             <asp:Label runat="server" Text="<%# Container.DataItem.ToString() %>"></asp:Label>
                             <br />
@@ -53,12 +51,10 @@
                 </td></tr>
         </table>
 
-    </div>
-<div style="clear:both"></div>
-        <div>
+<%--        <div>
             <asp:Button ID="Update" runat="server" Text="Update" OnClick="Update_Click"/>
             <br />
             <asp:Button ID="Delete" runat="server"Text="Delete Model" OnClick="Delete_Click"  Width="157px" />
-        </div>
-   
+        </div>--%>
+</div>
 </asp:Content>
