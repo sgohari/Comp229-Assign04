@@ -20,8 +20,10 @@
     </asp:ContentPlaceHolder>
 </head>
 <body id="mainPage">
+
     <div id="allpage">
-        
+        <%--the picture is taken fom http://wrathofkings.com/ks/ web. --%>
+                  <asp:Image ID="imgFoAllPages" runat="server" ImageUrl="~/images/brandfoMaste.png" CssClass="forMasterPageBanner" />
     <form id="form1" runat="server">
     <div>
         <nav class="navbar navbar-default">
@@ -48,6 +50,8 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+  
+
         <asp:ContentPlaceHolder ID="mainContain" runat="server">
 
         

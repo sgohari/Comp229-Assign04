@@ -9,6 +9,8 @@ namespace Comp229_Assign04
 {
     public class Global : System.Web.HttpApplication
     {
+        public static object models { get; internal set; }
+
         protected void Application_Start(object sender, EventArgs e)
         {
         }

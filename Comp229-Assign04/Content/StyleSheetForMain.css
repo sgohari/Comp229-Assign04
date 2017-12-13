@@ -5,6 +5,23 @@
     background-attachment:fixed;
     background-color:gray;
 }
+/*special effect for h1*/
+h1{
+    font-size:xx-large;
+    text-align:center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:brown;
+    text-transform:uppercase;
+}
+h1:hover
+{
+    opacity:0.9;
+    color:sandybrown;
+    font-size:xx-large;
+   font-family:Arial;
+   text-decoration-style:wavy;
+     border-radius: 15px;
+}
 /*
     Customizing the dive content
 */
@@ -17,6 +34,14 @@
     border-radius: 15px;
     opacity:0.9;
  
+}
+.forMasterPageBanner {
+    width:1020px;
+    height:200px;
+    padding-top:1px;
+    border-top-left-radius:15px;
+    border-top-right-radius:15px;
+   
 }
 /*
     diffent look for Footer
