@@ -10,41 +10,35 @@ namespace Comp229_Assign04
 {
     public partial class model : System.Web.UI.Page
     {
-        private models.BaseStats basestats;
+        private models.BaseStats baseStatus;
         protected string vName;
-        protected string vFaction;
+        protected string Vfaction;
         protected void Page_Load(object sender, EventArgs e)
         {
-            vName = Request.QueryString["name"];
-            vFaction = Request.QueryString["faction"];
-
-            if (name != null && faction != null)
+            if (vName != null && Vfaction != null)
             {
-                basestats = Global.models.FirstOrDefault(tModel => tModel.name == vName && tModel.faction == vFaction);
+                baseStatus.actions.
                 selectedModel();
             }
-            else
-            {
-                Response.Redirect("home.aspx");
-            }
+
         }
         private void selectedModel()
         {
-            imageModel.ImageUrl = basestats.imageUrl;
-            lbName.Text = basestats.name;
-            lbFaction.Text = basestats.faction;
-            lbRank.Text = basestats.rank.ToString();
-            lb_Base.Text = basestats._base.ToString();
-            lb_Size.Text = basestats.size.ToString();
-            lbDeployment.Text = basestats.deploymentZone;
-            lb_Traitsrep.DataSource = basestats.traits;
+            imageModel.ImageUrl = baseStatus.imageUrl;
+            lbName.Text = baseStatus.name;
+            lbFaction.Text = baseStatus.faction;
+            lbRank.Text = baseStatus.rank.ToString();
+            lb_Base.Text = baseStatus._base.ToString();
+            lb_Size.Text = baseStatus.size.ToString();
+            lbDeployment.Text = baseStatus.deploymentZone;
+            lb_Traitsrep.DataSource = baseStatus.traits;
             lb_Traitsrep.DataBind();
-            typerep.DataSource = basestats.defenseChart;
+            typerep.DataSource = baseStatus.defenseChart;
             typerep.DataBind();
-            mobility.Text = basestats.mobility.ToString();
-            willpower.Text = basestats.willpower.ToString();
-            resiliance.Text = basestats.resiliance.ToString();
-            wounds.Text = basestats.wounds.ToString();
+            mobility.Text = baseStatus.mobility.ToString();
+            willpower.Text = baseStatus.willpower.ToString();
+            resiliance.Text = baseStatus.resiliance.ToString();
+            wounds.Text = baseStatus.wounds.ToString();
 
 
         }
