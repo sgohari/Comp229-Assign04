@@ -13,31 +13,40 @@ namespace Comp229_Assign04 {
     public partial class home {
         
         /// <summary>
-        /// myModelLsRepeater control.
+        /// modelLsRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater myModelLsRepeater;
+        protected global::System.Web.UI.WebControls.Repeater modelLsRepeater;
         
         /// <summary>
-        /// btnAdd control.
+        /// addNewModel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::System.Web.UI.WebControls.Button addNewModel;
         
         /// <summary>
-        /// lbStats control.
+        /// sentEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbStats;
+        protected global::System.Web.UI.WebControls.Button sentEmail;
+        
+        /// <summary>
+        /// addNewModelDiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl addNewModelDiv;
         
         /// <summary>
         /// lbAddName control.
@@ -49,13 +58,22 @@ namespace Comp229_Assign04 {
         protected global::System.Web.UI.WebControls.Label lbAddName;
         
         /// <summary>
-        /// txtbxAddName control.
+        /// txtbxName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtbxAddName;
+        protected global::System.Web.UI.WebControls.TextBox txtbxName;
+        
+        /// <summary>
+        /// txtbxNameRqv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator txtbxNameRqv;
         
         /// <summary>
         /// lbAddFaction control.
@@ -67,12 +85,156 @@ namespace Comp229_Assign04 {
         protected global::System.Web.UI.WebControls.Label lbAddFaction;
         
         /// <summary>
-        /// txtbxAddFaction control.
+        /// txtbxFaction control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtbxAddFaction;
+        protected global::System.Web.UI.WebControls.TextBox txtbxFaction;
+        
+        /// <summary>
+        /// txtbxFactionRqv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator txtbxFactionRqv;
+        
+        /// <summary>
+        /// lbAddRank control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbAddRank;
+        
+        /// <summary>
+        /// txtbxRank control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtbxRank;
+        
+        /// <summary>
+        /// txtbxRankRqv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator txtbxRankRqv;
+        
+        /// <summary>
+        /// lbAddBase control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbAddBase;
+        
+        /// <summary>
+        /// txtbxBase control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtbxBase;
+        
+        /// <summary>
+        /// txtbxBaseRqv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator txtbxBaseRqv;
+        
+        /// <summary>
+        /// lbAddSize control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbAddSize;
+        
+        /// <summary>
+        /// txtbxSize control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtbxSize;
+        
+        /// <summary>
+        /// txtbxSizeRqv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator txtbxSizeRqv;
+        
+        /// <summary>
+        /// lbAddDeployment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbAddDeployment;
+        
+        /// <summary>
+        /// txtbxDeployment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtbxDeployment;
+        
+        /// <summary>
+        /// txtbxDeploymentRqv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator txtbxDeploymentRqv;
+        
+        /// <summary>
+        /// btnSaveModel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSaveModel;
+        
+        /// <summary>
+        /// btnCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancel;
+        
+        /// <summary>
+        /// sentEmailDiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl sentEmailDiv;
     }
 }

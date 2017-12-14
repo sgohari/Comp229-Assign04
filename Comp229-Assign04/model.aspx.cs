@@ -5,38 +5,46 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Newtonsoft.Json;
-
+using static Comp229_Assign04.models;
+using System.IO;
+using System.Data;
+using Comp229_Assign04.Models;
 
 namespace Comp229_Assign04
 {
     public partial class model : System.Web.UI.Page
     {
         private models.BaseStats baseStatus;
-
+  
         protected void Page_Load(object sender, EventArgs e)
         {
+            var name = Request.QueryString["name"];
+            var faction = Request.QueryString["faction"];
+            string filePath = HttpContext.Current.Server.MapPath("~/Asset/Assign04.json");
 
+
+            if (name != null && faction != null)
+            {
+                var jsonString = File.ReadAllText(filePath);
+                using (StreamReader file = File.OpenText(filePath))
+                {
+                    // deserialize JSON directly from a file
+                    JsonSerializer serializer = new JsonSerializer();
+                   var itemList = JsonConvert.DeserializeObject<List<Mini>>(jsonString);
+
+                    var oneItem = (from item in itemList
+                                   where item.name == name
+                                   select item);
+                    modelPageGrv.DataSource = oneItem;
+                    modelPageGrv.DataBind();
+                }
+            }
+            else
+            {
+                Response.Redirect("home.aspx");
+            }
         }
-        private void selectedModel()
-        {
-            //imageModel.ImageUrl = baseStatus.imageUrl;
-            lbName.Text = baseStatus.name;
-            lbFaction.Text = baseStatus.faction;
-            lbRank.Text = baseStatus.rank.ToString();
-            lb_Base.Text = baseStatus._base.ToString();
-            lb_Size.Text = baseStatus.size.ToString();
-            lbDeployment.Text = baseStatus.deploymentZone;
-            lb_Traitsrep.DataSource = baseStatus.traits;
-            lb_Traitsrep.DataBind();
-            typerep.DataSource = baseStatus.defenseChart;
-            typerep.DataBind();
-            mobility.Text = baseStatus.mobility.ToString();
-            willpower.Text = baseStatus.willpower.ToString();
-            resiliance.Text = baseStatus.resiliance.ToString();
-            wounds.Text = baseStatus.wounds.ToString();
-
-
-        }
+ 
         protected void Update_Click(object sender, EventArgs e)
         {
 
@@ -46,6 +54,21 @@ namespace Comp229_Assign04
         {
 
             
+        }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnAddModel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

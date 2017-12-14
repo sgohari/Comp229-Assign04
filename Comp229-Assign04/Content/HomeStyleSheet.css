@@ -8,51 +8,87 @@
     background-position:top center;
     background-repeat:no-repeat;
 }
-h2{
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size:x-large;
-    color:blue;
-    text-align:center;
-    text-transform:uppercase;
+h2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: x-large;
+    color: blue;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.addModleSizes {
+    width:200px;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:10%;
+    font-size:xx-large;
+    position:static;
+}
+#right {
+    float:right;
+    width:100px;
+    margin-right:auto;
+    margin-left:auto;
 
 }
-.Paragraph {
-    font-size:larger;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:black;
-}
-a{
-    text-decoration:none;
-}
-a:hover{
-    text-decoration:none;
-    text-decoration-line:none;
-    color:none;
-}
-#parentsDiv {
-    width:950px;
+#left {
+    float:left;
+    width:100px;
+      margin-right:auto;
     margin-left:auto;
-    margin-right:auto;
-    height: 187px;
+
 }
-.careerforRight {
-    float: right;
-    width: 290px;
-    height: 213px;
-    margin-right:auto;
-    margin-left:auto;
-    margin-top: 7px;
-}
-.careerforLeft {
+
+
+.designForHomeButtons {
+    color: darkkhaki;
+    font-size: xx-large;
+    font-weight: bolder;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
     border-style: none;
-    border-color: inherit;
-    border-width: medium;
-    float: left;
-    width: 310px;
-    height: 237px;
-    margin: 10px;
+    border-color: none;
+    width: 450px;
+    background-color: azure;
+    height: 50px;
 }
-.pic {
-    height:152px;
-    width:264px;
+.rights{
+    text-align:right;
+    font-size:x-large;
+    font-weight:bolder;
+}
+.btnHomeCancel{
+   
+    font-size:x-large;
+    font-weight:bolder;
+
+}
+
+#addNewModelDiv{
+ 
+ width:800px;
+ background:#ffffcc;
+ margin-left:auto;
+ margin-right:auto;
+}
+#sentEmailDiv{
+ position:absolute;
+ left:0;
+ top:0;
+ width:400px;
+}
+fieldset{
+    font-size:14px;  
+    padding:6px; 
+    width:733px;   
+    line-height:2; 
+    margin: 0 auto;
+ 
+    
+
+}
+legend{
+    border-bottom-right-radius:15px;
 }

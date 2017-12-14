@@ -8,56 +8,111 @@ using System.Net.Mail;
 using Newtonsoft.Json;
 using System.Net.Http;
 using System.IO;
+using System.Data;
+using Comp229_Assign04.Models;
+
 
 namespace Comp229_Assign04
 {
     public partial class home : System.Web.UI.Page
     {
+        DataTable itemList;
+        string filePath = HttpContext.Current.Server.MapPath("~/Asset/Assign04.json");
+        //bool disply = false;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            string filePath = @"D:\Fall2017\COMP229-009\Comp229-Assign04\Comp229-Assign04\Comp229-Assign04\Assign04.json";
-            string records = File.ReadAllText(filePath);
-            var collection = JsonConvert.DeserializeObject<List<Startup>>(records);
-            myModelLsRepeater.DataSource = collection;
-            myModelLsRepeater.DataBind();
-
+            repeaterModilLs();
+            visibilityfalse();
         }
-        protected void SendEmail()
+        public DataTable getNames()
         {
-            //SmtpClient client = new SmtpClient();
-            //MailMessage message = new MailMessage();
-            //try
-            //{
-                //MailAddress from = new MailAddress("cc-comp229f2016@outlook.com", "from me");
-                //MailAddress to = new MailAddress("to@outlook.com", "to you");
-                //message.From = from; message.To.Add(to);
-                //message.Subject = "hello!";
-                ////just sending the basic json due to time constraints
-                //System.Net.Mail.Attachment attachment;
-                //attachment = new System.Net.Mail.Attachment("~/Assign04.json");
-                //message.Attachments.Add(attachment);
-                //client.Host = "mailserver.example.com";
-                //client.Credentials = new System.Net.NetworkCredential("username", "password");
-                //client.Send(message);
-
-
-                //lbStats.Text = "The message has been sent";
-
-            //}
-            //catch (Exception )
-            //{
-            //    lbStats.Text = "message not sent";
-            //}
+            var jsonString = File.ReadAllText(filePath);
+            using (StreamReader file = File.OpenText(filePath))
+            {
+                // deserialize JSON directly from a file
+                JsonSerializer serializer = new JsonSerializer();
+                itemList = JsonConvert.DeserializeObject<DataTable>(jsonString);
+            }
+            return itemList;
         }
+        public void repeaterModilLs()
+        {
+            modelLsRepeater.DataSource = getNames();
+            modelLsRepeater.DataBind();
+        }
+
 
         protected void myModelLsRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-
+            
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
            // SendEmail();
+        }
+
+        protected void SaveContains_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void addNewModel_Click(object sender, EventArgs e)
+        {
+            addNewModelDiv.Visible = true;
+            sentEmailDiv.Visible = true;
+            visibilityTrue();
+            
+        }
+
+        protected void sentEmail_Click(object sender, EventArgs e)
+        {
+            sentEmailDiv.Visible = true;
+            addNewModelDiv.Visible = false;
+            visibilityfalse();
+        }
+        public void visibilityfalse()
+        {
+            lbAddName.Visible = false;
+            txtbxName.Visible = false;
+            lbAddFaction.Visible = false;
+            txtbxFaction.Visible = false;
+            lbAddRank.Visible = false;
+            txtbxRank.Visible = false;
+            lbAddSize.Visible = false;
+            txtbxSize.Visible = false;
+            lbAddDeployment.Visible = false;
+            txtbxDeployment.Visible = false;
+            lbAddBase.Visible = false;
+            txtbxBase.Visible = false;
+            txtbxDeploymentRqv.Visible = false;
+            txtbxFactionRqv.Visible = false;
+            txtbxNameRqv.Visible = false;
+            txtbxRankRqv.Visible = false;
+            txtbxSizeRqv.Visible = false;
+            txtbxBaseRqv.Visible = false;
+        }
+        public void visibilityTrue()
+        {
+            lbAddName.Visible = true;
+            txtbxName.Visible = true;
+            lbAddFaction.Visible = true;
+            txtbxFaction.Visible = true;
+            lbAddRank.Visible = true;
+            txtbxRank.Visible = true;
+            lbAddSize.Visible = true;
+            txtbxSize.Visible = true;
+            lbAddBase.Visible = true;
+            txtbxBase.Visible = true;
+            lbAddDeployment.Visible = true;
+            txtbxDeployment.Visible = true;
+            txtbxDeploymentRqv.Visible = true;
+            txtbxFactionRqv.Visible = true;
+            txtbxNameRqv.Visible = true;
+            txtbxRankRqv.Visible = true;
+            txtbxSizeRqv.Visible = true;
+            txtbxBaseRqv.Visible = true;
         }
     }
 }
