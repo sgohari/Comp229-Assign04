@@ -10,7 +10,7 @@ using System.Net.Http;
 using System.IO;
 using System.Data;
 using Comp229_Assign04.Models;
-
+using Newtonsoft.Json.Linq;
 
 namespace Comp229_Assign04
 {
@@ -18,8 +18,7 @@ namespace Comp229_Assign04
     {
         DataTable itemList;
         string filePath = HttpContext.Current.Server.MapPath("~/Asset/Assign04.json");
-        //bool disply = false;
-
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             repeaterModilLs();
@@ -38,6 +37,7 @@ namespace Comp229_Assign04
         }
         public void repeaterModilLs()
         {
+            
             modelLsRepeater.DataSource = getNames();
             modelLsRepeater.DataBind();
         }
@@ -71,6 +71,7 @@ namespace Comp229_Assign04
             sentEmailDiv.Visible = true;
             addNewModelDiv.Visible = false;
             visibilityfalse();
+            visibilityTrue();
         }
         public void visibilityfalse()
         {
@@ -92,6 +93,14 @@ namespace Comp229_Assign04
             txtbxRankRqv.Visible = false;
             txtbxSizeRqv.Visible = false;
             txtbxBaseRqv.Visible = false;
+            HomePageTable.Visible = false;
+            lbEmail.Visible = false;
+            lbMessage.Visible = false;
+            lbSubject.Visible = false;
+            txtbxEmail.Visible = false;
+            txtbxMessage.Visible = false;
+            txtbxSubject.Visible = false;
+            
         }
         public void visibilityTrue()
         {
@@ -113,6 +122,43 @@ namespace Comp229_Assign04
             txtbxRankRqv.Visible = true;
             txtbxSizeRqv.Visible = true;
             txtbxBaseRqv.Visible = true;
+            HomePageTable.Visible = true;
+            lbEmail.Visible = true;
+            lbMessage.Visible = true;
+            lbSubject.Visible = true;
+            txtbxEmail.Visible = true;
+            txtbxSubject.Visible = true;
+            txtbxMessage.Visible = true;
+        }
+
+        protected void btnSaveModel_Click(object sender, EventArgs e)
+        {
+            var jSonFile = new Mini();
+            var array = JArray.Parse("jSonFile");
+
+            var itemToAdd = new JObject();
+            itemToAdd["name"] = txtbxName.Text;
+            itemToAdd["faction"] = txtbxFaction.Text;
+            itemToAdd["rank"] = txtbxRank.Text;
+            itemToAdd["_base"] = txtbxRank.Text;
+            itemToAdd["size"] = txtbxSize.Text;
+            itemToAdd["deploymentZone"] = txtbxDeployment.Text;
+            var jsonToOutput = JsonConvert.SerializeObject(array, Formatting.Indented);
+        }
+        protected bool ValidateField()
+        {
+            bool validate = true;
+            if (
+            txtbxName.Text == "" ||
+            txtbxFaction.Text == "" ||
+            txtbxRank.Text == "" ||
+            txtbxSize.Text == "" ||
+            txtbxDeployment.Text == "" ||
+            txtbxBase.Text == "")
+            {
+                return validate = false;
+            }
+            else return validate;
         }
     }
 }

@@ -223,12 +223,8 @@
     <Compile Include="model.aspx.designer.cs">
       <DependentUpon>model.aspx</DependentUpon>
     </Compile>
-    <Compile Include="models.cs" />
-    <Compile Include="Models\CharModel.cs" />
     <Compile Include="Models\Mini.cs" />
-    <Compile Include="Models\stockReturn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Startup.cs" />
     <Compile Include="update.aspx.cs">
       <DependentUpon>update.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

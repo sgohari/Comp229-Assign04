@@ -9,10 +9,12 @@
                 <asp:BoundField DataField="name" HeaderText="Name" />
                 <asp:BoundField DataField="faction" HeaderText="Faction" />
                 <asp:BoundField DataField="rank" HeaderText="Rank" />
-                <asp:BoundField DataField="base" HeaderText="Base" />
+                <asp:BoundField DataField="_base" HeaderText="Base" />
                 <asp:BoundField DataField="size" HeaderText="Size" />
                 <asp:BoundField DataField="deploymentZone" HeaderText="Deployment Zone" />
+                 <asp:ImageField DataImageUrlField="ImageUrl" ControlStyle-Width="250px" ControlStyle-Height="250px" HeaderText="Picture" ></asp:ImageField>
             </Columns>
+           
         </asp:GridView>
         <br />
 

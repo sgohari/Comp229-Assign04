@@ -13,7 +13,7 @@ namespace Comp229_Assign04
     public class Global :HttpApplication
     {
         public static object models { get; internal set; }
-        DataTable itemLists;
+       
         protected void Application_Start(object sender, EventArgs e)
         {
             

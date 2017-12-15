@@ -9,22 +9,16 @@ namespace Comp229_Assign04
 {
     public partial class update : System.Web.UI.Page
     {
+       
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            
         }
 
-        protected void SaveContains_Click(object sender, EventArgs e)
+        
+        protected void updatechanges_Click(object sender, EventArgs e)
         {
-            outer.Visible = false;
-            inner.Visible = true;
-        }
 
-        protected void updateContains_Click(object sender, EventArgs e)
-        {
-            inner.Visible = false;
-            outer.Visible = true;
-          
         }
     }
 }

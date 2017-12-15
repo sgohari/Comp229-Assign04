@@ -32,7 +32,7 @@
      <asp:Button runat="server" ID="sentEmail" OnClick="sentEmail_Click" Text="Sent Email" CssClass="designForHomeButtons"/>
 
 <div id="addNewModelDiv" runat="server">
-    <table class="table breadcrumb" style="width: 98%" >
+    <table class="table breadcrumb" style="width: 98%" id="HomePageTable" runat="server">
         <tr>
             <td class="rights">
                 <asp:Label runat="server" Text="Name" ID="lbAddName"  />
@@ -96,7 +96,7 @@
         </tr>
         <tr>
            <td class="rights">
-                <asp:Button ID="btnSaveModel" runat="server" Text="SAVE" />
+                <asp:Button ID="btnSaveModel" runat="server" Text="SAVE" OnClick="btnSaveModel_Click" />
             </td>
             <td class="btnHomeCancel">
                 <asp:Button ID="btnCancel" runat="server" Text="CANCEL" />
@@ -104,8 +104,35 @@
         </tr>
     </table>
         <div id="sentEmailDiv" runat="server">
-           
-
+            <table id="sentEmailTable" class="tab breadcrumb">
+                <tr>
+                    <td>
+                        <asp:Label runat="server" ID="lbEmail" Text="Email" />
+                    </td>
+                    <td>
+                        <asp:TextBox runat="server" ID="txtbxEmail" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label runat="server" ID="lbSubject" Text="Subject" />
+                    </td>
+                    <td>
+                        <asp:TextBox runat="server" ID="txtbxSubject" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label runat="server" ID="lbMessage" Text="Message" />
+                    </td>
+                    <td>
+                        <asp:TextBox runat="server" ID="txtbxMessage" TextMode="MultiLine" />
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+            </table>
         </div>
 
  
