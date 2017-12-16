@@ -16,7 +16,7 @@ namespace Comp229_Assign04
 {
     public partial class home : System.Web.UI.Page
     {
-        DataTable itemList;
+        List<Mini> itemList;
         string filePath = HttpContext.Current.Server.MapPath("~/Asset/Assign04.json");
        
         protected void Page_Load(object sender, EventArgs e)
@@ -24,14 +24,14 @@ namespace Comp229_Assign04
             repeaterModilLs();
             visibilityfalse();
         }
-        public DataTable getNames()
+        public List<Mini> getNames()
         {
             var jsonString = File.ReadAllText(filePath);
             using (StreamReader file = File.OpenText(filePath))
             {
                 // deserialize JSON directly from a file
                 JsonSerializer serializer = new JsonSerializer();
-                itemList = JsonConvert.DeserializeObject<DataTable>(jsonString);
+                itemList = JsonConvert.DeserializeObject<List<Mini>>(jsonString);
             }
             return itemList;
         }
@@ -72,6 +72,7 @@ namespace Comp229_Assign04
             addNewModelDiv.Visible = false;
             visibilityfalse();
             visibilityTrue();
+            
         }
         public void visibilityfalse()
         {
@@ -98,9 +99,9 @@ namespace Comp229_Assign04
             lbMessage.Visible = false;
             lbSubject.Visible = false;
             txtbxEmail.Visible = false;
-            txtbxMessage.Visible = false;
             txtbxSubject.Visible = false;
-            
+            txtbxMessage.Visible = false;
+
         }
         public void visibilityTrue()
         {
@@ -123,42 +124,102 @@ namespace Comp229_Assign04
             txtbxSizeRqv.Visible = true;
             txtbxBaseRqv.Visible = true;
             HomePageTable.Visible = true;
+
             lbEmail.Visible = true;
             lbMessage.Visible = true;
             lbSubject.Visible = true;
             txtbxEmail.Visible = true;
-            txtbxSubject.Visible = true;
             txtbxMessage.Visible = true;
+            txtbxSubject.Visible = true;
         }
 
         protected void btnSaveModel_Click(object sender, EventArgs e)
         {
-            var jSonFile = new Mini();
-            var array = JArray.Parse("jSonFile");
-
-            var itemToAdd = new JObject();
-            itemToAdd["name"] = txtbxName.Text;
-            itemToAdd["faction"] = txtbxFaction.Text;
-            itemToAdd["rank"] = txtbxRank.Text;
-            itemToAdd["_base"] = txtbxRank.Text;
-            itemToAdd["size"] = txtbxSize.Text;
-            itemToAdd["deploymentZone"] = txtbxDeployment.Text;
-            var jsonToOutput = JsonConvert.SerializeObject(array, Formatting.Indented);
+            SerializationJsn();
         }
-        protected bool ValidateField()
+        public void SerializationJsn()
         {
-            bool validate = true;
-            if (
-            txtbxName.Text == "" ||
-            txtbxFaction.Text == "" ||
-            txtbxRank.Text == "" ||
-            txtbxSize.Text == "" ||
-            txtbxDeployment.Text == "" ||
-            txtbxBase.Text == "")
+            //Storing the txtboxes values to mini here
+            // this method was easir for my undrestanding to do the serialization and 
+            //saving it to jason file.
+           Mini mini = new Mini();
+            mini.name = txtbxName.Text;
+            mini.faction = txtbxFaction.Text;
+            mini.size = Convert.ToInt32(txtbxSize.Text);
+            mini.rank = Convert.ToInt32(txtbxRank.Text);
+            mini.deploymentZone = txtbxDeployment.Text;
+            mini._base = Convert.ToInt32(txtbxBase.Text);
+
+            filePath = System.Web.Hosting.HostingEnvironment.MapPath("~/Asset/Assign04.json");
+            if (File.Exists(filePath))
             {
-                return validate = false;
+               
+                var converToJsonRecord = JsonConvert.DeserializeObject<List<Mini>>(File.ReadAllText(filePath));
+                converToJsonRecord.Add(mini);
+                File.WriteAllText(filePath, JsonConvert.SerializeObject(converToJsonRecord));
+                this.sentEmails();
+                Response.Redirect("~/home.aspx");
+               
             }
-            else return validate;
         }
+
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtbxBase.Text = "";
+            txtbxName.Text = "";
+            txtbxRank.Text = "";
+            txtbxSize.Text = "";
+            txtbxFaction.Text = "";
+            txtbxDeployment.Text = "";
+            txtbxBaseRqv.Text = "";
+            txtbxDeploymentRqv.Text = "";
+            txtbxFactionRqv.Text = "";
+            txtbxNameRqv.Text = "";
+            txtbxRankRqv.Text = "";
+            txtbxSizeRqv.Text = "";
+
+            Response.Redirect("home.aspx");
+        }
+
+        protected void btnSentEmails_Click(object sender, EventArgs e)
+        {
+            sentEmails();
+        }
+        protected void sentEmails()
+        {
+            SmtpClient smtpClient = new SmtpClient("smtp-mail.outlook.com", 587);
+            MailMessage message = new MailMessage();
+            try
+            {
+                // These values are probably set by the client.
+                message.Subject = "Testing!";
+                message.Body = "This is the body of a sample message";
+
+                // These could be static, or dynamic, depending on situation.
+                MailAddress toAddress = new MailAddress("cc-comp229f2016@outlook.com", "You");
+                MailAddress fromAddress = new MailAddress("cc-comp229f2016@outlook.com", "Comp229");
+                message.From = fromAddress;
+                message.To.Add(toAddress);
+                smtpClient.Host = "smtp-mail.outlook.com";
+
+                // Note that EnableSsl must be true, and we need to turn of default credentials BEFORE adding the new ones
+                smtpClient.EnableSsl = true;
+                smtpClient.UseDefaultCredentials = false;
+                smtpClient.Credentials = new System.Net.NetworkCredential("cc-comp229f2016@outlook.com", "password");
+
+                smtpClient.Send(message);
+                lbStates.Text = "Email has been sent.";
+            }
+            catch (Exception ex)
+            {
+                lbStates.Text = "Message Was not sent!";
+            }
+        }
+        
+    
+        //taken from Week9 code Demos. Thanks for help Proff 
+
+           
     }
 }

@@ -13,6 +13,7 @@
                 <asp:BoundField DataField="size" HeaderText="Size" />
                 <asp:BoundField DataField="deploymentZone" HeaderText="Deployment Zone" />
                  <asp:ImageField DataImageUrlField="ImageUrl" ControlStyle-Width="250px" ControlStyle-Height="250px" HeaderText="Picture" ></asp:ImageField>
+                
             </Columns>
            
         </asp:GridView>

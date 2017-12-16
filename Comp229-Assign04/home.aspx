@@ -29,7 +29,7 @@
   <div>
 
     <asp:Button runat="server" ID="addNewModel" OnClick="addNewModel_Click" Text="Add New Model" CssClass="designForHomeButtons" />
-     <asp:Button runat="server" ID="sentEmail" OnClick="sentEmail_Click" Text="Sent Email" CssClass="designForHomeButtons"/>
+     <asp:Button runat="server" ID="sentEmail" OnClick="sentEmail_Click" Text="Hide Add Model" CssClass="designForHomeButtons"/>
 
 <div id="addNewModelDiv" runat="server">
     <table class="table breadcrumb" style="width: 98%" id="HomePageTable" runat="server">
@@ -99,7 +99,7 @@
                 <asp:Button ID="btnSaveModel" runat="server" Text="SAVE" OnClick="btnSaveModel_Click" />
             </td>
             <td class="btnHomeCancel">
-                <asp:Button ID="btnCancel" runat="server" Text="CANCEL" />
+                <asp:Button ID="btnCancel" runat="server" Text="CANCEL" OnClick="btnCancel_Click" />
             </td>
         </tr>
     </table>
@@ -130,7 +130,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td>
+                        <asp:Button ID="btnSentEmails" runat="server" Text="Sent" OnClick="btnSentEmails_Click"/>
+                    </td>
+                    <asp:Label runat="server" ID="lbStates" />
                 </tr>
             </table>
         </div>
